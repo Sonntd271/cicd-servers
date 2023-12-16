@@ -12,7 +12,7 @@ variable "zone" {
 
 variable "myip" {
   type = string
-  default = "193.11.184.0/24"
+  default = "myip"
 }
 
 variable "amis" {
@@ -29,5 +29,5 @@ variable "user" {
 
 variable "vpc_id" {
     type = string
-    default = "vpc-067aa258a02d4a873"
+    default = "myvpc"
 }

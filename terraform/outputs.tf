@@ -11,5 +11,5 @@ output "sonar-public-ip" {
 }
 
 output "Post-installation" {
-  value = "Please manually reboot the sonar instance"
+  value = "Please manually reboot the sonar and jenkins servers"
 }

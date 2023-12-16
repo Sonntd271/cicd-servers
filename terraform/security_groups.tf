@@ -79,7 +79,24 @@ resource "aws_security_group" "sonar-sg" {
     cidr_blocks = [ var.myip ]
   }
 
+  ingress {
+    from_port = 0
+    to_port = 0
+    protocol = -1
+    security_groups = [ aws_security_group.jenkins-sg.id ]
+  }
+
   tags = {
     Name = "sonar-sg"
   }
+}
+
+resource "aws_security_group_rule" "sonar-to-jenkins" {
+  security_group_id = aws_security_group.jenkins-sg.id
+  
+  type = "ingress"
+  from_port = 0
+  to_port = 0
+  protocol = -1
+  source_security_group_id = aws_security_group.sonar-sg.id
 }
